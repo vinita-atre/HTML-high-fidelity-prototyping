@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Washington Wizards- Signup</title>
+	<link rel="stylesheet" href="Signup.css">
+	<link rel="stylesheet" href="progressStep.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">		
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="WashingtonWizards.html"><span class="glyphicon glyphicon-remove"></span>Close</a></li>
+				
+			</ul>
+			<!--<ul class="nav navbar-nav navbar-left">
+				<li><a href="#"><span class="glyphicon glyphicon-arrow-left"></span>Back</a></li>
+				
+			</ul>-->
+		</div>
+	</nav>
+	<div class="container">
+		
+
+		<div class="row bs-wizard" style="border-bottom:0;">
+
+			<div class="col-xs-3 bs-wizard-step complete">
+				<div class="text-center bs-wizard-stepnum">Register</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum">Book a seat</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum">Make payment</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+				<div class="text-center bs-wizard-stepnum">Get a ticket</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#price").val("$0");	
+		if ($("#sel1 option:selected").text() == "A")
+		{
+			$("#price").val("$29");
+		}
+		else if ($("#sel1 option:selected").text() == "B"){
+			$("#price").val("$35");
+		}
+		else if ($("#sel1 option:selected").text() == "C"){
+			$("#price").val("$49");
+		}else{
+			$("#price").val("$65");
+		}
+		
+		$("#addSeat").click(function(){
+			
+			window.location.reload();
+		});
+	});
+
+
+
+
+</script>
+<div class="container">
+	<div class="row">
+		<h2> Select your seat</h2>
+	</div>
+</div>
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form-body">					
+				
+				<div id="sectionB">
+					<div class="innter-form">
+						<form class="sa-innate-form" method="post" action="Makepayment.html">
+							<div class="form-group">
+								<label for="sel1">Select stand</label>
+								<select class="form-control" id="sel1">
+									<option>A</option>
+									<option>B</option>
+									<option>C</option>
+									<option>D</option>
+								</select>
+							</div>
+							
+							<label>Choose Seats</label>
+							<div id="seat-map">
+								<img src="3dseating.jpg">				
+							</div>
+							<label>Price</label>
+							<input type="text" name="price" id="price">
+							<div style="text-align: center;">
+							<button type="button" id="addSeat" >Select seat</button>
+							
+							<a href="#"><p>Select another seat</p></a>
+							
+							<button type="submit">Continue</button>
+							</div>
+						</form>
+					</div>
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
